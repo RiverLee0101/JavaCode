@@ -28,6 +28,9 @@ public class P88MergeSortedArray {
         Solution solution = new P88MergeSortedArray().new Solution();
     }
 
+    /**
+     * 比较大的放到尾部，大的所在的那个数组下标减1，直到某一个数组比较完毕
+     */
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public void merge(int[] nums1, int m, int[] nums2, int n) {
@@ -40,13 +43,13 @@ public class P88MergeSortedArray {
 //                    m--;
 //                }
 //            }
-            int i = m-1;
-            int j = n-1;
-            int p = m+n-1;
-            while (i >= 0 &&  j>= 0) {
+            int i = m - 1;
+            int j = n - 1;
+            int p = m + n - 1;
+            while (i >= 0 && j >= 0) {
                 nums1[p--] = (nums1[i] < nums2[j]) ? nums2[j--] : nums1[i--];
             }
-            System.arraycopy(nums2, 0, nums1,0, j + 1);
+            System.arraycopy(nums2, 0, nums1, 0, j + 1);
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)
