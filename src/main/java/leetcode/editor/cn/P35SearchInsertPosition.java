@@ -33,7 +33,7 @@ package leetcode.editor.cn;
 public class P35SearchInsertPosition {
     public static void main(String[] args) {
         Solution solution = new P35SearchInsertPosition().new Solution();
-        int[] nums = {1,3,5,6};
+        int[] nums = {1, 3, 5, 6};
         int target = 5;
         System.out.println(solution.searchInsert(nums, target));
     }
@@ -48,8 +48,8 @@ public class P35SearchInsertPosition {
             int high = nums.length - 1;
             int mid;
 
-            while(low <= high) {
-                mid = (high+low) / 2;
+            while (low <= high) {
+                mid = (high + low) / 2;
                 if (target < nums[mid]) {
                     high = mid - 1;
                 } else if (target > nums[mid]) {
