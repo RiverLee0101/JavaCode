@@ -198,7 +198,7 @@ public class LinkedList<E> {
         StringBuilder sb = new StringBuilder();
         Node cur = dummyHead.next;
         while (cur != null) {
-            sb.append(cur + "--->");
+            sb.append(cur + "->");
             cur = cur.next;
         }
         sb.append("NULL");

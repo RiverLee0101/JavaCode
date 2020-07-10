@@ -36,19 +36,43 @@
 // Related Topics 数组 双指针
 
 package leetcode.editor.cn;
+
+import java.util.HashSet;
+import java.util.Set;
+
 //java:数组中的K-diff数对
-public class P532KDiffPairsInAnArray{
-    public static void main(String[] args){
+
+/**
+ *
+ * 未解决
+ *
+ */
+public class P532KDiffPairsInAnArray {
+    public static void main(String[] args) {
         Solution solution = new P532KDiffPairsInAnArray().new Solution();
+        int[] nums = {1, 1, 1, 2, 1};
+        int k = 1;
+        System.out.println(solution.findPairs(nums, k));
     }
-    
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int findPairs(int[] nums, int k) {
-
-
+    class Solution {
+        public int findPairs(int[] nums, int k) {
+            int count = 0;
+            Set<Integer> s1 = new HashSet<>();
+            Set<Integer> s2 = new HashSet<>();
+            for (int i = 0; i < nums.length; i++) {
+                for (int i1 = i + 1; i1 < nums.length; i1++) {
+                    if (Math.abs(nums[i] - nums[i1]) == k && !s1.contains(nums[i])  && !s2.contains(nums[i1])) {
+                        s1.add(nums[i]);
+                        s2.add(nums[i1]);
+                        count++;
+                    }
+                 }
+            }
+            return count;
+        }
     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }
