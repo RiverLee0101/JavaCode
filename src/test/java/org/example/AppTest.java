@@ -63,4 +63,9 @@ public class AppTest
         foo(sb);
         System.out.println(sb);
     }
+
+    @Test
+    public void testGit(){
+        //
+    }
 }
