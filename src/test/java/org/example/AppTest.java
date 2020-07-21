@@ -68,5 +68,6 @@ public class AppTest
     public void testGit(){
         //....
         // test
+        System.out.println("test");
     }
 }
